@@ -1,3 +1,4 @@
+agents: []
 tools:
   - name: write_file
     description: Write a file, previous content is overwritten if exists
