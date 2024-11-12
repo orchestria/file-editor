@@ -1,0 +1,29 @@
+tools:
+  - name: write_file
+    description: Write a file, previous content is overwritten if exists
+    language: python
+    entrypoint: write_file.py
+    inputs_schema:
+      type: object
+      properties:
+        path:
+          path: Path of the new file to write
+          type: string
+        content:
+          description: Text content to write
+          type: string
+      required:
+        - path
+        - content
+  - name: read_file
+    description: Read a file and returns its content, returns an error if file doesn't exist
+    language: python
+    entrypoint: read_file.py
+    inputs_schema:
+      type: object
+      properties:
+        path:
+          path: Path of the file to read
+          type: string
+      required:
+        - path
