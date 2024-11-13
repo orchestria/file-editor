@@ -18,6 +18,9 @@ def run():
     path = Path(data["path"])
     content = data["content"]
 
+    if not path.exists():
+        path.touch()
+
     path.write_text(content, "utf-8")
 
     print(json.dumps({"status": "success"}))
